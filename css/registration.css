@@ -1,0 +1,118 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #a0eab9, #073e18);
+  /* Remove flex display from body to ensure header and container are stacked vertically */
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 60px;
+  background-color: black;
+  z-index: 100;
+  width: 100%; /* Ensure header spans the full width */
+  position: fixed; /* Fix header to the top */
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.container {
+  width: 50%;
+  max-width: 500px;
+  margin: 70px auto 0; /* Add margin-top to push container below the header */
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease;
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  color: white;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.approval-section {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  color: #3e684b;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.approval-section label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.approval-section input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* input {
+  background-color: rgb(249, 227, 227);
+} */
+
+.already-registered {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.already-registered a {
+  color: #4CAF50;
+  /* Match the button color */
+  text-decoration: none;
+}
+
+.already-registered a:hover {
+  text-decoration: underline;
+}

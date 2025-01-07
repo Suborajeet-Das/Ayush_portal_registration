@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Government Official Registration</title>
+  <link rel="stylesheet" href="/css/registration.css">
+ 
+</head>
+
+<body>
+
+  <!-- <header>
+    <div class="emblem">
+      <img class="emblem-image" src="/photo/emblem.png">
+      <img class="emblem2-image" src="/photo/emblem2.png">
+    </div>
+  </header> -->
+
+  <div class="container">
+    <h2>Stakeholder Registration</h2>
+    <form action="submit_registration.php" method="POST">
+      <!-- Basic Information -->
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="unique_id">Unique ID:</label>
+        <input type="text" id="unique_id" name="unique_id" required>
+      </div>
+
+      <div class="form-group">
+        <label for="organization">Organization/Company:</label>
+        <input type="text" id="organization" name="organization" required>
+      </div>
+
+      <div class="form-group">
+        <label for="position">Position/Title:</label>
+        <input type="text" id="position" name="position" required>
+      </div>
+
+      <div class="form-group">
+        <label for="stakeholder_type">Type of Stakeholder:</label>
+        <select id="stakeholder_type" name="stakeholder_type" required>
+          <option value="">Select Type</option>
+          <option value="investor">Investor</option>
+          <option value="supplier">Supplier</option>
+          <option value="partner">Partner</option>
+          <option value="advisor">Advisor</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <!-- Approval Section -->
+      <div class="approval-section">
+        <h3>Approvals</h3>
+        <label>
+          <input type="checkbox" name="approval_identity" required>
+          I certify that I am a Stakeholder and the information provided is accurate.
+        </label><br>
+
+        <label>
+          <input type="checkbox" name="approval_authority" required>
+          I have the authority to register on behalf of my organization/company.
+        </label><br>
+
+        <label>
+          <input type="checkbox" name="approval_terms" required>
+          I agree to the terms and conditions of the registration process.
+        </label>
+      </div>
+
+      <div class="form-group">
+        <button type="submit">Register</button>
+      </div>
+    </form>
+
+    <!-- Already Registered Section -->
+    <div class="already-registered">
+      <p>Already registered? <a href="/login.html">Login here</a>.</p>
+    </div>
+  </div>
+
+</body>
+
+</html>
