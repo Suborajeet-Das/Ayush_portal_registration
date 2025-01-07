@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Government Official Registration</title>
+  <link rel="stylesheet" href="/css/registration.css">
+ 
+</head>
+
+<body>
+
+  <!-- <header>
+    <div class="emblem">
+      <img class="emblem-image" src="/photo/emblem.png">
+      <img class="emblem2-image" src="/photo/emblem2.png">
+    </div>
+  </header> -->
+
+  <div class="container">
+    <h2>Government Official Registration</h2>
+    <form action="submit_registration.php" method="POST">
+      <!-- Basic Information -->
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="department">Government Department:</label>
+        <input type="text" id="department" name="department" required>
+      </div>
+
+      <div class="form-group">
+        <label for="position">Position/Title:</label>
+        <input type="text" id="position" name="position" required>
+      </div>
+
+      <!-- Approval Section -->
+      <div class="approval-section">
+        <h3>Approvals</h3>
+        <label>
+          <input type="checkbox" name="approval_identity" required>
+          I certify that I am a government official and the information provided is accurate.
+        </label><br>
+
+        <label>
+          <input type="checkbox" name="approval_authority" required>
+          I have the authority to register on behalf of my department.
+        </label><br>
+
+        <label>
+          <input type="checkbox" name="approval_terms" required>
+          I agree to the terms and conditions of the registration process.
+        </label>
+      </div>
+
+      <div class="form-group">
+        <button type="submit">Register</button>
+      </div>
+    </form>
+
+    <!-- Already Registered Section -->
+    <div class="already-registered">
+      <p>Already registered? <a href="/login.html">Login here</a>.</p>
+    </div>
+  </div>
+
+
+  <script type="module">
+    // Use the CDN for Supabase
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+    // Initialize Supabase
+    const supabaseUrl = 'https://yglsowjbpowfjnsmodww.supabase.co/';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlnbHNvd2picG93Zmpuc21vZHd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU4NzIyNDYsImV4cCI6MjA0MTQ0ODI0Nn0.sMiQ4AwO468iFJAdmNs0PXRFyE_C9_Gwl_wYdxhofKY';
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    // Handle form submission
+    const form = document.querySelector('#registrationForm');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const name = document.querySelector('#name').value;
+      const email = document.querySelector('#email').value;
+      const password = document.querySelector('#password').value;
+      const department = document.querySelector('#department').value;
+      const position = document.querySelector('#position').value;
+
+      // Debugging logs
+      console.log('Form Submission:');
+      console.log('Name:', name);
+      console.log('Email:', email);
+      console.log('Password:', password);
+      console.log('Department:', department);
+      console.log('Position:', position);
+
+      try {
+        const { error } = await supabase
+          .from('official_registrations') // Table name
+          .insert([
+            { name, email, password, department, position }
+          ]);
+
+        if (error) {
+          console.error('Supabase Insert Error:', error);
+          alert('Error registering: ' + error.message);
+        } else {
+          alert('Registration successful!');
+          window.location.href = 'index.html';
+        }
+      } catch (err) {
+        console.error('Unexpected Error:', err);
+        alert('An unexpected error occurred');
+      }
+    });
+  </script>
+</body>
+
+
+</html>

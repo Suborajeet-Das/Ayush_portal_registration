@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Government Official Registration</title>
+  <link rel="stylesheet" href="/css/registration.css">
+  
+</head>
+
+<body>
+
+  <!-- <header>
+    <div class="emblem">
+      <img class="emblem-image" src="/photo/emblem.png">
+      <img class="emblem2-image" src="/photo/emblem2.png">
+    </div>
+  </header> -->
+
+  <div class="container">
+    <h2>Startup Official Registration</h2>
+    <form action="submit_registration.php" method="POST">
+      <!-- Basic Information -->
+      <div class="form-group">
+        <label for="company_name">Company Name:</label>
+        <input type="text" id="company_name" name="company_name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="founder_name">Founder's Full Name:</label>
+        <input type="text" id="founder_name" name="founder_name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="industry_type">Industry Type:</label>
+        <select id="industry_type" name="industry_type" required>
+          <option value="">Select Industry</option>
+          <option value="herbal">Herbal</option>
+          <option value="homeopathy">Homeopathy</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="startup_stage">Startup Stage:</label>
+        <select id="startup_stage" name="startup_stage" required>
+          <option value="">Select Stage</option>
+          <option value="idea">Idea Stage</option>
+          <option value="seed">Seed Stage</option>
+          <option value="growth">Growth Stage</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="team_size">Team Size:</label>
+        <input type="number" id="team_size" name="team_size" required>
+      </div>
+
+      <div class="form-group">
+        <label for="funding_status">Funding Status:</label>
+        <select id="funding_status" name="funding_status" required>
+          <option value="">Select Funding Status</option>
+          <option value="self_funded">Self-funded</option>
+          <option value="seed_funded">Seed Funded</option>
+          <option value="vc_funded">VC Funded</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="business_plan">Business Plan:</label>
+        <textarea id="business_plan" name="business_plan" rows="5" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="website">Company Website (Optional):</label>
+        <input type="url" id="website" name="website">
+      </div>
+
+      <div class="form-group">
+        <label for="approval_terms">
+          <input type="checkbox" id="approval_terms" name="approval_terms" required>
+          I agree to the terms and conditions of the registration process.
+        </label>
+      </div>
+
+      <div class="form-group">
+        <button type="submit">Register</button>
+      </div>
+
+      <!-- Already Registered Section -->
+      <div class="already-registered">
+        <p>Already registered? <a href="/login.html">Login here</a>.</p>
+      </div>
+
+</body>
+
+</html>

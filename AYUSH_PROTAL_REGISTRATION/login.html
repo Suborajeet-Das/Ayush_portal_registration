@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* General Body Style */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #a0eab9, #073e18);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Container Style */
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease;
+        }
+
+        /* Fade-In Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Heading Style */
+        h2 {
+            text-align: center;
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* Form Group Style */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Label Style */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        /* Input Field Style */
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        /* Input Focus Style */
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #6e8efb;
+            outline: none;
+            box-shadow: 0 0 5px rgba(110, 142, 251, 0.5);
+        }
+
+        /* Button Style */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #5dda95;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Button Hover Effect */
+        button:hover {
+            background-color: #576ee0;
+        }
+
+        /* Text Alignment and Color */
+        p {
+            text-align: center;
+            color: #777;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        /* Link Style */
+        p a {
+            color: #6e8efb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Link Hover Effect */
+        p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Checkbox Style */
+        .form-group input[type="checkbox"] {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Login</h2>
+    <form action="login.php" method="POST">
+        <!-- Email Input -->
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <!-- Password Input -->
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <!-- Remember Me Checkbox -->
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="remember_me"> Remember Me
+            </label>
+        </div>
+
+        <!-- Login Button -->
+        <div class="form-group">
+            <button type="submit">Login</button>
+        </div>
+
+        <!-- Forgot Password & Register Link -->
+        <div class="form-group">
+            <p>
+                <a href="forgot_password.html">Forgot your password?</a><br>
+                Don't have an account? <a onclick="showOptions()">Register here</a>.
+            </p>
+        </div>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
